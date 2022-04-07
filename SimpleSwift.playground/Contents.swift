@@ -1,3 +1,5 @@
+import Foundation
+
 print("Welcome to the UW Calculator Playground")
 
 func calculate(_ args: [String]) -> Int {
@@ -44,7 +46,9 @@ func calculate(_ args: [String]) -> Int {
 }
 
 func calculate(_ arg: String) -> Int {
-    return -1
+    let arr = arg.components(separatedBy: " ")
+    return calculate(arr)
+
 }
 
 // -------------------------------------------
@@ -77,14 +81,14 @@ calculate(["2", "fact"]) == 2 // 2*1
 calculate(["5", "fact"]) == 120 // 5*4*3*2*1
 calculate(["fact"]) == 0
 
-//calculate("2 + 2") == 4
-//calculate("2 * 2") == 4
-//calculate("2 - 2") == 0
-//calculate("2 / 2") == 1
-//
-//calculate("1 2 3 4 5 count") == 5
-//calculate("1 2 3 4 5 avg") == 3
-//calculate("5 fact") == 120
+calculate("2 + 2") == 4
+calculate("2 * 2") == 4
+calculate("2 - 2") == 0
+calculate("2 / 2") == 1
+
+calculate("1 2 3 4 5 count") == 5
+calculate("1 2 3 4 5 avg") == 3
+calculate("5 fact") == 120
 
 // -------------------------------------------
 // These are extra credit tests; commented out
